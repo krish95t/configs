@@ -4,7 +4,7 @@
     echo "Please Provide Some Arguments(C/C++)"
     exit 1
 }
-Ext=$(echo $1 | cut -d'.' -f2)
+Ext=$(echo $1 | awk -F. '{print $NF}')
 
 Type="Invalid"
 compiler="gcc"
@@ -44,7 +44,7 @@ fi
 
 echo ">> Compiling The Source File ($compiler $1) ..."
 # echo ">> $Tag is running ..."
-$compiler $1 -o xrun
+$compiler $1 -o run
 if [ $? -eq 0 ]; then
     echo ">> Done, Now Running the Executable (xrun)..."
 else
@@ -52,4 +52,4 @@ else
     exit 1
 fi
 echo ""
-$(pwd)/xrun
+$(pwd)/run
