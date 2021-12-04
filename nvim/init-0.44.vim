@@ -1,11 +1,13 @@
 """ Loading Plugings
 call plug#begin('~/.config/vim-plug')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'sheerun/vim-polyglot'
-Plug 'itchyny/lightline.vim'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'vim-syntastic/syntastic'
+Plug 'sheerun/vim-polyglot'
 Plug 'joshdick/onedark.vim'
-Plug 'morhetz/gruvbox'
+Plug 'itchyny/lightline.vim'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 """ Main Configurations
@@ -14,8 +16,6 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
 set incsearch ignorecase smartcase hlsearch
 set wildmode=longest,list,full wildmenu
 set ruler laststatus=2 showcmd showmode
-set list listchars=trail:»,tab:»-
-set fillchars+=vert:\ 
 set wrap breakindent
 set encoding=utf-8
 set textwidth=0
@@ -26,19 +26,15 @@ set clipboard+=unnamedplus
 set title
 
 """ Keymaps
-"inoremap <C-k> <Esc>
-"vnoremap <C-k> <Esc>
+inoremap jk <Esc>
+vnoremap jk <Esc>
+inoremap <C-j> <Esc>
+vnoremap <C-j> <Esc>
+tnoremap <Esc> <C-\><C-n>
+noremap <C-l> :nohl<CR><C-l>
 
-""" Custom Configurations
-if (empty($TMUX))
-  if (has("nvim"))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
-let g:lightline = { 'colorscheme': 'gruvbox' }
+set termguicolors
+let g:lightline = { 'colorscheme': 'onedark' }
 syntax on
-colorscheme gruvbox
+colorscheme onedark
 "source ~/.config/nvim/coc.vim
