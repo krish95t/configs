@@ -1,0 +1,11 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "files.autoSave": "afterDelay",
+    "editor.fontFamily": "'JetBrains Mono',Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 20,
+    "terminal.integrated.fontSize": 16,
+    "code-runner.runInTerminal": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+}
